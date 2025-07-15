@@ -21,7 +21,7 @@ This is a modern developer portfolio built with React, Vite, Tailwind CSS, and T
 - TypeScript-first React components
 - Vite for fast development
 - Tailwind CSS for styling
-- Animated transitions, parallax, SVG backgrounds, and particle effects
+- Animated transitions, parallax and SVG backgrounds
 - Responsive and accessible design
 - Theme toggle (light/dark)
 - All major developer portfolio sections
