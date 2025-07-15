@@ -33,7 +33,7 @@ This is a modern developer portfolio built with React, Vite, Tailwind CSS, and T
 
 ## Migration Notes
 - All components are now `.tsx` files and use TypeScript types.
-- See `.github/copilot-instructions.md` for Copilot guidance.
+
 
 ---
 
