@@ -25,7 +25,7 @@ const About = () => (
         frontend and backend technologies to deliver seamless user experiences.
       </p>
       <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-4">
-        <strong>Tech Summary:</strong> 3+ years with React, 2+ years with Node.js and MongoDB, and a
+        <strong>Tech Summary:</strong> 1+ years with React, 1+ years with Node.js and MongoDB, and a
         strong foundation in RESTful APIs and UI/UX.
       </p>
       <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
