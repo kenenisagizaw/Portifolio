@@ -29,8 +29,8 @@ const About = () => (
         strong foundation in RESTful APIs and UI/UX.
       </p>
       <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-        <strong>Fun Fact:</strong> I love solving programming puzzles and participated in several
-        hackathons across Ethiopia!
+        <strong>Fun Fact:</strong> I love solving programming puzzles and participating in
+        hackathons!
       </p>
     </motion.div>
   </section>
