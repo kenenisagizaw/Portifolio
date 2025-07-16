@@ -2,34 +2,34 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const experience = [
+  // {
+  //   company: "Information Network Security Administration",
+  //   role: "Fullstack Developer",
+  //   period: "march 2025 - july 2025",
+  //   description:
+  //     "Led development of internal dashboards and REST APIs. Improved app performance by 40% by optimizing image delivery and caching strategies.",
+  // },
   {
-    company: "Tech Solutions Inc.",
-    role: "Fullstack Developer",
-    period: "2022 - Present",
-    description:
-      "Led development of internal dashboards and REST APIs. Improved app performance by 40% by optimizing image delivery and caching strategies.",
-  },
-  {
-    company: "Web Innovators",
+    company: "Information Network Security Administration",
     role: "Frontend Developer",
-    period: "2020 - 2022",
+    period: "march 2025 - july 2025",
     description:
       "Redesigned legacy UI using React and Tailwind, resulting in 30% faster page load. Collaborated with backend team on GraphQL integrations.",
-  },
-  {
-    company: "Freelance Projects",
-    role: "Fullstack Developer",
-    period: "2021 - Present",
-    description:
-      "Built custom landing pages, admin panels, and authentication flows for small businesses using React, Firebase, and Node.js.",
-  },
-  {
-    company: "Hack4Ethiopia 2023",
-    role: "Participant – 2nd Place Winner",
-    period: "2023",
-    description:
-      "Created a crowdsourced disaster reporting app in 48 hours. Focused on rapid prototyping, responsive design, and team collaboration.",
-  },
+  // },
+  // {
+  //   company: "Freelance Projects",
+  //   role: "Fullstack Developer",
+  //   period: "2021 - Present",
+  //   description:
+  //     "Built custom landing pages, admin panels, and authentication flows for small businesses using React, Firebase, and Node.js.",
+  // },
+  // {
+  //   company: "Hack4Ethiopia 2023",
+  //   role: "Participant – 2nd Place Winner",
+  //   period: "2023",
+  //   description:
+  //     "Created a crowdsourced disaster reporting app in 48 hours. Focused on rapid prototyping, responsive design, and team collaboration.",
+  // },
 ];
 
 const Experience = () => (
