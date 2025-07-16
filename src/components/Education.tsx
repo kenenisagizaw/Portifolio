@@ -4,16 +4,16 @@ import { useInView } from "framer-motion";
 
 const education = [
   {
-    school: "Addis Ababa University",
-    degree: "BSc in Computer Science",
-    period: "2017 - 2021",
+    school: "Haramaya University",
+    degree: "BSc in Software Engineering",
+    period: "2022 - present",
     description:
-      "Graduated with distinction. Focused on software engineering and web development.",
+      "Focused on software engineering and web development.",
   },
   {
     school: "ODA Special Boarding School",
     degree: "High School Diploma",
-    period: "2014 - 2017",
+    period: "2018 - 2022",
     description: "Graduated with high score.",
   },
 ];
