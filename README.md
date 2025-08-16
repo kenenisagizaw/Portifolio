@@ -28,4 +28,4 @@ This is a modern developer portfolio built with React, Vite, Tailwind CSS, and T
 
 ---
 
-For more details, see the code and comments in each section.
+
