@@ -15,7 +15,7 @@ const experience = [
     period: "march 2025 - july 2025",
     description:
       "Redesigned legacy UI using React and Tailwind, resulting in 30% faster page load. Collaborated with backend team on GraphQL integrations.",
-  // },
+  },
   // {
   //   company: "Freelance Projects",
   //   role: "Fullstack Developer",
