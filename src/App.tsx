@@ -20,10 +20,13 @@ import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Hobbies from "./components/Hobbies";
 import Projects from "./components/Projects";
+import ProjectsPage from "./components/ProjectsPage";
 import TechStack from "./components/TechStack";
 import HeroText from "./components/HeroText";
 
 function App() {
+  const isProjectsPage = window.location.pathname === "/projects";
+
   const [theme, setTheme] = useState(() => {
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
@@ -86,112 +89,121 @@ function App() {
     <>
       <Navbar toggleTheme={toggleTheme} theme={theme} />
 
-      <main
-        ref={heroRef}
-        className="min-h-screen w-full flex flex-col justify-center items-center bg-gradient-to-br from-gray-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 p-8 relative overflow-hidden"
-      >
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-6xl w-full z-10">
-          <motion.div
-            className="flex justify-center items-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.6 }}
-            variants={fadeInUp}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+      {isProjectsPage ? (
+        <>
+          <ProjectsPage advanced />
+          <Footer />
+        </>
+      ) : (
+        <>
+          <main
+            ref={heroRef}
+            className="min-h-screen w-full flex flex-col justify-center items-center bg-gradient-to-br from-gray-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 p-8 relative overflow-hidden"
           >
-            <img
-              src="/kegy.jpg"
-              alt="Kenenisa Gizaw avatar"
-              className="w-64 h-64 object-cover"
-            />
-          </motion.div>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-6xl w-full z-10">
+              <motion.div
+                className="flex justify-center items-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.6 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+              >
+                <img
+                  src="/kegy.png"
+                  alt="Kenenisa Gizaw avatar"
+                  className="w-64 h-75 object-cover"
+                />
+              </motion.div>
 
-          <motion.div
-            className="flex-1 flex flex-col justify-center text-center md:text-left"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={fadeInUp}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-          >
-            <HeroText />
+              <motion.div
+                className="flex-1 flex flex-col justify-center text-center md:text-left"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+              >
+                <HeroText />
 
-            <motion.div
-              className="flex flex-wrap justify-center md:justify-start gap-4 mt-6"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }}
-              variants={fadeInUp}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-            >
-              <a
-                href="#contact"
-                className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow transition-colors duration-200 text-sm flex items-center gap-2"
-              >
-                <Briefcase className="w-4 h-4" />
-                Hire Me
-              </a>
-              <a
-                href="#projects"
-                className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow transition-colors duration-200 text-sm flex items-center gap-2"
-              >
-                <ArrowRight className="w-4 h-4" />
-                View Projects
-              </a>
-              <a
-                href="/resume.pdf"
-                className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300"
-              >
-                <FileText className="w-5 h-5" />
-                Download Resume
-              </a>
-            </motion.div>
+                <motion.div
+                  className="flex flex-wrap justify-center md:justify-start gap-4 mt-6"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.4 }}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+                >
+                  <a
+                    href="#contact"
+                    className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow transition-colors duration-200 text-sm flex items-center gap-2"
+                  >
+                    <Briefcase className="w-4 h-4" />
+                    Hire Me
+                  </a>
+                  <a
+                    href="#projects"
+                    className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow transition-colors duration-200 text-sm flex items-center gap-2"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                    View Projects
+                  </a>
+                  <a
+                    href="/resume.pdf"
+                    className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300"
+                  >
+                    <FileText className="w-5 h-5" />
+                    Download Resume
+                  </a>
+                </motion.div>
 
-            <motion.div
-              className="flex gap-4 mt-6 justify-center md:justify-start"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }}
-              variants={fadeInUp}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
-            >
-              <a
-                href="https://github.com/kenenisagizaw"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 shadow-md"
-              >
-                <Github className="w-6 h-6 text-gray-800 dark:text-white" />
-              </a>
-              <a
-                href="https://linkedin.com/in/kenenisagizaw"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 shadow-md"
-              >
-                <Linkedin className="w-6 h-6 text-gray-800 dark:text-white" />
-              </a>
-              <a
-                href="mailto:kenenisagizaw@gmail.com"
-                aria-label="Email"
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 shadow-md"
-              >
-                <Mail className="w-6 h-6 text-gray-800 dark:text-white" />
-              </a>
-            </motion.div>
-          </motion.div>
-        </div>
-      </main>
+                <motion.div
+                  className="flex gap-4 mt-6 justify-center md:justify-start"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.4 }}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
+                >
+                  <a
+                    href="https://github.com/kenenisagizaw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 shadow-md"
+                  >
+                    <Github className="w-6 h-6 text-gray-800 dark:text-white" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/kenenisa-gizaw-52ba03367"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 shadow-md"
+                  >
+                    <Linkedin className="w-6 h-6 text-gray-800 dark:text-white" />
+                  </a>
+                  <a
+                    href="mailto:kenenisagizaw@gmail.com"
+                    aria-label="Email"
+                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 shadow-md"
+                  >
+                    <Mail className="w-6 h-6 text-gray-800 dark:text-white" />
+                  </a>
+                </motion.div>
+              </motion.div>
+            </div>
+          </main>
 
-      <About />
-      <Experience />
-      <Education />
-      <TechStack />
-      <Projects advanced />
-      <ContactPage />
-      <Footer />
+          <About />
+          <Experience />
+          <Education />
+          <TechStack />
+          <Projects advanced />
+          <ContactPage />
+          <Footer />
+        </>
+      )}
     </>
   );
 }
