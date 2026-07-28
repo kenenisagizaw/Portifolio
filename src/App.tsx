@@ -125,7 +125,7 @@ function App() {
                         alt="Kenenisa Gizaw avatar"
                         className="h-full w-full object-cover object-top"
                       />
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-gray-950/55 to-transparent p-5 text-left">
+                      <div className="absolute inset-x-0 bottom-2 translate-y-2 bg-gradient-to-t from-gray-950/55 to-transparent p-5 text-left">
                         <p className="text-sm font-medium text-white/80">Kenenisa Gizaw</p>
                         <p className="text-lg font-semibold text-white">Full-Stack Developer</p>
                       </div>
@@ -172,7 +172,7 @@ function App() {
                     View Projects
                   </a>
                   <a
-                    href="/resume.pdf"
+                    href="/Kenenisa_Gizaw_CV.pdf"
                     className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-black"
                   >
                     <FileText className="w-5 h-5" />
