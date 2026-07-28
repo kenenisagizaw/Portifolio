@@ -22,7 +22,7 @@ const Footer = () => (
           <Github className="w-5 h-5 text-gray-700 dark:text-gray-100" />
         </a>
         <a
-          href="https://linkedin.com/in/kenenisagizaw"
+          href="https://www.linkedin.com/in/kenenisa-gizaw-52ba03367"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -31,29 +31,20 @@ const Footer = () => (
           <Linkedin className="w-5 h-5 text-gray-700 dark:text-gray-100" />
         </a>
         <a
-          href="mailto:kenenisagizaw@gmail.com"
+          href="mailto:kenenisagizaw.28@gmail.com"
           aria-label="Email"
           className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-all shadow hover:shadow-lg"
         >
           <Mail className="w-5 h-5 text-gray-700 dark:text-gray-100" />
         </a>
         <a
-          href="https://t.me/kenenisagizaw"
+          href="https://t.me/Kenenisa_Gizaw"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Telegram"
           className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-all shadow hover:shadow-lg"
         >
           <FaTelegramPlane className="w-6 h-6 text-gray-800 dark:text-gray-200" />
-        </a>
-        <a
-          href="https://facebook.com/kenenisagizaw"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-          className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-all shadow hover:shadow-lg"
-        >
-          <Facebook className="w-5 h-5 text-gray-700 dark:text-gray-100" />
         </a>
         <a
           href="https://twitter.com/kenenisagizaw"
