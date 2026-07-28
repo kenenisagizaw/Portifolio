@@ -24,7 +24,7 @@ export const projects: Project[] = [
       "Integrated frontend components with backend services and PostgreSQL data models.",
     ],
     tech: ["Next.js", "Go", "PostgreSQL", "TypeScript", "Tailwind CSS"],
-    liveDemoUrl: "#",
+    liveDemoUrl: "https://psychometry.insa.gov.et/",
     githubUrl: "https://github.com/kenenisagizaw",
   },
   {
@@ -95,9 +95,9 @@ const cardVariants: Variants = {
 export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = ({ project, advanced }) => (
   <motion.article
     variants={cardVariants}
-    className="flex flex-col bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-indigo-100 dark:border-gray-700 group"
+    className="flex flex-col bg-white dark:bg-gray-800 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-gray-200 dark:border-gray-800 group"
   >
-    <div className="flex flex-col flex-1 p-6">
+    <div className="flex flex-col flex-1 p-6 md:p-7">
       <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors duration-200">
         {project.title}
       </h3>
@@ -106,13 +106,13 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
         {project.role}
       </p>
 
-      <div className="mb-4">
-        <div className="h-44 md:h-48 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 bg-gradient-to-br from-gray-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+      <div className="mb-5">
+        <div className="relative aspect-[16/10] rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-gray-50 via-white to-indigo-50/60 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 overflow-hidden shadow-inner">
           {project.image ? (
             <img
               src={project.image}
               alt={`${project.title} screenshot`}
-              className="h-full w-full object-cover object-center"
+              className="h-full w-full object-cover object-top"
               loading="lazy"
             />
           ) : (
@@ -120,10 +120,11 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
               Screenshot
             </div>
           )}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/10 to-transparent" />
         </div>
       </div>
 
-      <p className="text-sm md:text-base italic text-gray-700 dark:text-gray-300 mb-4">
+      <p className="text-sm md:text-base italic text-gray-700 dark:text-gray-300 mb-5">
         {project.description}
       </p>
 
@@ -159,12 +160,12 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
         </div>
       )}
 
-      <div className="mt-auto flex flex-wrap gap-3 pt-2">
+      <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
         <a
           href={project.liveDemoUrl ?? "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex flex-1 items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow transition-colors duration-200 hover:bg-indigo-700"
+          className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow transition-colors duration-200 hover:bg-indigo-700"
         >
           Live Demo
         </a>
@@ -172,7 +173,7 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
           href={project.githubUrl ?? "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex flex-1 items-center justify-center rounded-full bg-gray-700 px-4 py-2 text-sm font-semibold text-white shadow transition-colors duration-200 hover:bg-gray-900"
+          className="inline-flex items-center justify-center rounded-full bg-gray-700 px-4 py-3 text-sm font-semibold text-white shadow transition-colors duration-200 hover:bg-gray-900"
         >
           GitHub Repository
         </a>
@@ -184,7 +185,7 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
 const Projects: React.FC<{ advanced?: boolean }> = ({ advanced }) => (
   <section
     id="projects"
-    className="py-20 px-4 md:px-8 lg:px-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
+    className="projects-section py-20 px-4 md:px-8 lg:px-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
     aria-labelledby="projects-heading"
   >
     <motion.div
