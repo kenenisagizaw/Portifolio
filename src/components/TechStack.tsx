@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const SectionWrapper = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <section className={`bg-gray-50 dark:bg-gray-900 py-16 px-4 md:px-8 ${className}`}>
-    <div className="max-w-5xl mx-auto">{children}</div>
+  <section className={`bg-gray-50 dark:bg-gray-900 py-20 px-4 md:px-8 lg:px-16 text-gray-900 dark:text-white ${className}`}>
+    <div className="max-w-6xl mx-auto">{children}</div>
   </section>
 );
 
@@ -53,7 +53,7 @@ const TechStack = () => {
               {items.map(({ name, icon, description }, idx) => (
                 <li
                   key={idx}
-                  className="flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 relative"
+                  className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 relative"
                   title={description}
                 >
                   <span className="text-2xl md:text-3xl mb-2" aria-hidden="true">
