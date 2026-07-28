@@ -12,13 +12,11 @@ import { motion } from "framer-motion";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
-import HomeText from "./components/HeroText";
 import About from "./components/About";
 import ContactPage from "./components/ContactPage";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
-import Hobbies from "./components/Hobbies";
 import Projects from "./components/Projects";
 import ProjectsPage from "./components/ProjectsPage";
 import TechStack from "./components/TechStack";
@@ -98,59 +96,84 @@ function App() {
         <>
           <main
             ref={heroRef}
-            className="min-h-screen w-full flex flex-col justify-center items-center bg-gradient-to-br from-gray-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 p-8 relative overflow-hidden"
+            className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-gray-50 via-white to-indigo-100 px-4 py-20 dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950 md:px-8 lg:px-16"
           >
-            <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-6xl w-full z-10">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+              <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-indigo-400/15 blur-3xl" />
+              <div className="absolute right-0 top-32 h-80 w-80 rounded-full bg-violet-400/10 blur-3xl" />
+              <div className="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-sky-400/10 blur-3xl" />
+            </div>
+
+            <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[230px_minmax(0,1.35fr)] lg:gap-20">
               <motion.div
-                className="flex justify-center items-center"
+                className="mx-auto w-full max-w-[250px] justify-self-start rounded-[2rem] border border-white/60 bg-white/70 p-4 shadow-[0_22px_60px_-28px_rgba(79,70,229,0.35)] backdrop-blur-xl dark:border-gray-800 dark:bg-gray-900/60 md:p-5 lg:ml-[-1.5rem]"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.6 }}
                 variants={fadeInUp}
                 transition={{ duration: 0.7, ease: "easeOut" }}
               >
-                <img
-                  src="/kegy.png"
-                  alt="Kenenisa Gizaw avatar"
-                  className="w-64 h-75 object-cover"
-                />
+                <div className="mx-auto flex max-w-md flex-col items-center text-center">
+                  <div className="mb-6 inline-flex rounded-full border border-indigo-200 bg-indigo-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-indigo-700 dark:border-indigo-900 dark:bg-indigo-950/60 dark:text-indigo-300">
+                    Available for Job
+                  </div>
+
+                  <div className="w-full overflow-hidden rounded-[2rem] border border-gray-200 bg-gradient-to-br from-gray-100 to-indigo-100 p-2 shadow-inner dark:border-gray-700 dark:from-gray-900 dark:to-gray-800">
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-[1.5rem] bg-gray-200">
+                      <img
+                        src="/kegy.png"
+                        alt="Kenenisa Gizaw avatar"
+                        className="h-full w-full object-cover object-top"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-gray-950/55 to-transparent p-5 text-left">
+                        <p className="text-sm font-medium text-white/80">Kenenisa Gizaw</p>
+                        <p className="text-lg font-semibold text-white">Full-Stack Developer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div
-                className="flex-1 flex flex-col justify-center text-center md:text-left"
+                className="relative overflow-hidden rounded-[2.25rem] border border-white/70 bg-white/75 p-7 text-center shadow-[0_34px_120px_-48px_rgba(99,102,241,0.65)] backdrop-blur-2xl lg:p-14 lg:text-left dark:border-gray-800 dark:bg-gray-900/65"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
                 variants={fadeInUp}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
               >
+                <div className="pointer-events-none absolute -left-16 top-0 h-56 w-56 rounded-full bg-indigo-400/20 blur-3xl" />
+                <div className="pointer-events-none absolute right-0 top-10 h-64 w-64 rounded-full bg-violet-400/20 blur-3xl" />
+                <div className="relative z-10">
+            
+
                 <HeroText />
 
                 <motion.div
-                  className="flex flex-wrap justify-center md:justify-start gap-4 mt-6"
+                  className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.4 }}
                   variants={fadeInUp}
-                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.35 }}
                 >
                   <a
                     href="#contact"
-                    className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow transition-colors duration-200 text-sm flex items-center gap-2"
+                    className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-indigo-700"
                   >
                     <Briefcase className="w-4 h-4" />
                     Hire Me
                   </a>
                   <a
                     href="#projects"
-                    className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow transition-colors duration-200 text-sm flex items-center gap-2"
+                    className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm transition-transform duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-700 dark:border-gray-700 dark:bg-gray-900/60 dark:text-white"
                   >
                     <ArrowRight className="w-4 h-4" />
                     View Projects
                   </a>
                   <a
                     href="/resume.pdf"
-                    className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300"
+                    className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-black"
                   >
                     <FileText className="w-5 h-5" />
                     Download Resume
@@ -158,39 +181,65 @@ function App() {
                 </motion.div>
 
                 <motion.div
-                  className="flex gap-4 mt-6 justify-center md:justify-start"
+                  className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.4 }}
                   variants={fadeInUp}
-                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.55 }}
+                >
+                  <span className="rounded-full border border-gray-200 bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300">
+                    React
+                  </span>
+                  <span className="rounded-full border border-gray-200 bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300">
+                    Node
+                  </span>
+                  <span className="rounded-full border border-gray-200 bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300">
+                    Express
+                  </span>
+                  <span className="rounded-full border border-gray-200 bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300">
+                    Next JS
+                  </span>
+                  <span className="rounded-full border border-gray-200 bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300">
+                    PostgreSQL
+                  </span>
+                </motion.div>
+
+                <motion.div
+                  className="mt-8 flex justify-center gap-4 lg:justify-start"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.4 }}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.7 }}
                 >
                   <a
                     href="https://github.com/kenenisagizaw"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
-                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 shadow-md"
+                    className="grid h-11 w-11 place-items-center rounded-full border border-gray-200 bg-white/80 text-gray-800 shadow-sm transition-colors duration-200 hover:border-indigo-300 hover:text-indigo-700 dark:border-gray-700 dark:bg-gray-900/60 dark:text-white"
                   >
-                    <Github className="w-6 h-6 text-gray-800 dark:text-white" />
+                    <Github className="w-5 h-5" />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/kenenisa-gizaw-52ba03367"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
-                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 shadow-md"
+                    className="grid h-11 w-11 place-items-center rounded-full border border-gray-200 bg-white/80 text-gray-800 shadow-sm transition-colors duration-200 hover:border-indigo-300 hover:text-indigo-700 dark:border-gray-700 dark:bg-gray-900/60 dark:text-white"
                   >
-                    <Linkedin className="w-6 h-6 text-gray-800 dark:text-white" />
+                    <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="mailto:kenenisagizaw@gmail.com"
+                    href="mailto:kenenisagizaw.28@gmail.com"
                     aria-label="Email"
-                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 shadow-md"
+                    className="grid h-11 w-11 place-items-center rounded-full border border-gray-200 bg-white/80 text-gray-800 shadow-sm transition-colors duration-200 hover:border-indigo-300 hover:text-indigo-700 dark:border-gray-700 dark:bg-gray-900/60 dark:text-white"
                   >
-                    <Mail className="w-6 h-6 text-gray-800 dark:text-white" />
+                    <Mail className="w-5 h-5" />
                   </a>
                 </motion.div>
+                </div>
               </motion.div>
             </div>
           </main>
