@@ -11,7 +11,7 @@ const Navbar = ({ toggleTheme, theme }: { toggleTheme: () => void; theme: string
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-            Kenenisa Gizaw
+            K.G
           </a>
 
           {/* Desktop Links + Toggle */}
