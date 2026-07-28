@@ -6,7 +6,7 @@ const education = [
   {
     school: "Haramaya University",
     degree: "BSc in Software Engineering",
-    period: "2022 - present",
+    period: "2022 - 2026",
     description:
       "Focused on software engineering and web development.",
   },
@@ -36,15 +36,15 @@ const Education = () => {
 
   return (
     <section
-      className="education-section py-16 px-4 md:px-8 lg:px-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
+      className="education-section py-20 px-4 md:px-8 lg:px-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
       id="education"
       aria-labelledby="education-heading"
       ref={ref}
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2
           id="education-heading"
-          className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left"
+          className="text-4xl md:text-5xl font-bold mb-12 text-center text-indigo-600 dark:text-indigo-300"
         >
           Education
         </h2>
@@ -52,16 +52,16 @@ const Education = () => {
           {education.map((edu, idx) => (
             <motion.li
               key={idx}
-              className="border-l-4 border-pink-500 pl-6 relative rounded-md p-4"
+              className="relative rounded-3xl border border-gray-200 bg-white p-6 pl-8 shadow-lg dark:border-gray-800 dark:bg-gray-800 md:p-8"
               variants={itemVariants}
               initial="hidden"
               animate={controls}
               custom={idx}
             >
-              <div className="absolute left-[-10px] top-1 w-4 h-4 bg-pink-500 rounded-full shadow-md"></div>
-              <header>
-                <h3 className="text-xl font-semibold">{edu.degree}</h3>
-                <p className="text-pink-600 dark:text-pink-400 font-medium">
+              <div className="absolute left-6 top-8 h-3 w-3 rounded-full bg-pink-500 ring-4 ring-pink-100 dark:ring-gray-700"></div>
+              <header className="space-y-2 pl-6 md:pl-8">
+                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">{edu.degree}</h3>
+                <p className="text-pink-600 dark:text-pink-400 font-medium text-sm md:text-base">
                   {edu.school}
                 </p>
                 <time className="block text-sm text-gray-600 dark:text-gray-400 mb-2">
