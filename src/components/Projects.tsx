@@ -215,13 +215,7 @@ const Projects: React.FC<{ advanced?: boolean }> = ({ advanced }) => (
       </motion.div>
 
       <div className="mt-12 flex justify-center">
-        <a
-          href="/projects"
-          className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-indigo-700"
-        >
-          View All
-        </a>
-      </div>
+       
     </motion.div>
   </section>
 );
