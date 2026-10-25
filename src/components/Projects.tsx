@@ -1,5 +1,19 @@
 import { motion, type Variants } from "framer-motion";
 import React from "react";
+import { FaGithub } from "react-icons/fa";
+import {
+  SiDart,
+  SiExpress,
+  SiGo,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiReact,
+  SiSpringboot,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 
 export type Project = {
   title: string;
@@ -25,7 +39,7 @@ export const projects: Project[] = [
     ],
     tech: ["Next.js", "Go", "PostgreSQL", "TypeScript", "Tailwind CSS"],
     image: "/Psychometry_Screenshot.png",
-    liveDemoUrl: "https://psychometry.insa.gov.et/",
+    liveDemoUrl: "https://personality.insa.gov.et/",
     githubUrl: "https://github.com/kenenisagizaw",
   },
   {
@@ -54,7 +68,7 @@ export const projects: Project[] = [
     ],
     tech: ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Prisma", "TypeScript", "Tailwind CSS", "Dart"],
     image: "/HperLocal_Screenshot.png",
-    liveDemoUrl: "#",
+    liveDemoUrl: "https://hyperlocal-marketplace-frontend.vercel.app/",
     githubUrl: "https://github.com/kenenisagizaw",
   },
   {
@@ -92,6 +106,20 @@ const cardVariants: Variants = {
     },
   },
 };
+
+const technologyIcons = {
+  "Next.js": SiNextdotjs,
+  Go: SiGo,
+  PostgreSQL: SiPostgresql,
+  TypeScript: SiTypescript,
+  "Tailwind CSS": SiTailwindcss,
+  React: SiReact,
+  "Spring Boot": SiSpringboot,
+  "Node.js": SiNodedotjs,
+  "Express.js": SiExpress,
+  Prisma: SiPrisma,
+  Dart: SiDart,
+} as const;
 
 export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = ({ project, advanced }) => (
   <motion.article
@@ -152,9 +180,16 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
             {project.tech.map((t, i) => (
               <li
                 key={i}
-                className="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-indigo-200 text-xs font-medium shadow"
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-indigo-200 text-xs font-medium shadow"
               >
-                {t}
+                  {(() => {
+                    const TechnologyIcon = technologyIcons[t as keyof typeof technologyIcons];
+
+                    return TechnologyIcon ? (
+                      <TechnologyIcon aria-hidden="true" className="h-4 w-4" />
+                    ) : null;
+                  })()}
+                  {t}
               </li>
             ))}
           </ul>
@@ -164,8 +199,17 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
       <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
         <a
           href={project.liveDemoUrl ?? "#"}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...(project.title === "INSA Intranet Portal" && {
+            title:
+              "Live demo unavailable due to organizational privacy and security policies.",
+            "aria-label": `${project.title} live demo unavailable due to organizational privacy and security policies`,
+            onClick: (event: React.MouseEvent<HTMLAnchorElement>) =>
+              event.preventDefault(),
+          })}
+          {...(project.title !== "INSA Intranet Portal" && {
+            target: "_blank",
+            rel: "noopener noreferrer",
+          })}
           className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow transition-colors duration-200 hover:bg-indigo-700"
         >
           Live Demo
@@ -176,6 +220,7 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center rounded-full bg-gray-700 px-4 py-3 text-sm font-semibold text-white shadow transition-colors duration-200 hover:bg-gray-900"
         >
+          <FaGithub aria-hidden="true" className="h-4 w-4" />
           GitHub Repository
         </a>
       </div>
