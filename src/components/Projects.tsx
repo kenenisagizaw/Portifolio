@@ -1,5 +1,5 @@
-import React from "react";
 import { motion, type Variants } from "framer-motion";
+import React from "react";
 
 export type Project = {
   title: string;
@@ -24,6 +24,7 @@ export const projects: Project[] = [
       "Integrated frontend components with backend services and PostgreSQL data models.",
     ],
     tech: ["Next.js", "Go", "PostgreSQL", "TypeScript", "Tailwind CSS"],
+    image: "/Psychometry_Screenshot.png",
     liveDemoUrl: "https://psychometry.insa.gov.et/",
     githubUrl: "https://github.com/kenenisagizaw",
   },
@@ -112,7 +113,7 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
             <img
               src={project.image}
               alt={`${project.title} screenshot`}
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-contain p-2"
               loading="lazy"
             />
           ) : (
@@ -215,7 +216,7 @@ const Projects: React.FC<{ advanced?: boolean }> = ({ advanced }) => (
       </motion.div>
 
       <div className="mt-12 flex justify-center">
-       
+      </div>
     </motion.div>
   </section>
 );
