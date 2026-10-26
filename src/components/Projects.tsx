@@ -124,47 +124,46 @@ const technologyIcons = {
 export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = ({ project, advanced }) => (
   <motion.article
     variants={cardVariants}
-    className="flex flex-col bg-white dark:bg-gray-800 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-gray-200 dark:border-gray-800 group"
+    className="bg-gradient-to-b from-white to-slate-50 dark:from-[#1e293b] dark:to-[#0f172a] rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-xl overflow-hidden flex flex-col"
   >
     <div className="flex flex-col flex-1 p-6 md:p-7">
-      <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors duration-200">
+      <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-2">
         {project.title}
       </h3>
 
-      <p className="text-xs md:text-sm font-medium uppercase tracking-wide text-indigo-600 dark:text-indigo-300 mb-3">
+      <p className="text-xs text-slate-400 uppercase tracking-widest font-medium mb-4">
         {project.role}
       </p>
 
-      <div className="mb-5">
-        <div className="relative aspect-[16/10] rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-gray-50 via-white to-indigo-50/60 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 overflow-hidden shadow-inner">
+      <div className="bg-slate-100 dark:bg-[#0b1120] rounded-xl p-2 border border-slate-200 dark:border-slate-700/50 mb-6">
+        <div className="overflow-hidden rounded-lg">
           {project.image ? (
             <img
               src={project.image}
               alt={`${project.title} screenshot`}
-              className="h-full w-full object-contain p-2"
+              className="w-full h-auto object-cover rounded-lg"
               loading="lazy"
             />
           ) : (
-            <div className="flex h-full items-center justify-center text-xs font-semibold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-500">
+            <div className="flex min-h-40 items-center justify-center text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
               Screenshot
             </div>
           )}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/10 to-transparent" />
         </div>
       </div>
 
-      <p className="text-sm md:text-base italic text-gray-700 dark:text-gray-300 mb-5">
+      <p className="text-slate-600 dark:text-slate-300 text-sm italic mb-6 leading-relaxed">
         {project.description}
       </p>
 
       <div className="mb-4">
-        <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white mb-2">
+        <h4 className="text-slate-900 dark:text-white font-semibold mb-3 text-sm tracking-wide">
           Highlights
         </h4>
-        <ul className="space-y-2 text-sm md:text-base text-gray-700 dark:text-gray-300">
+        <ul className="space-y-2 text-slate-600 dark:text-slate-300 text-sm">
           {project.highlights.map((highlight, i) => (
             <li key={i} className="flex gap-2">
-              <span className="mt-1 text-indigo-500 dark:text-indigo-300">✓</span>
+              <span className="mt-1 text-indigo-400">✓</span>
               <span>{highlight}</span>
             </li>
           ))}
@@ -173,14 +172,14 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
 
       {advanced && (
         <div className="mb-4">
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white mb-2">
+          <h4 className="text-slate-900 dark:text-white font-semibold mb-3 text-sm tracking-wide">
             Tech Stack
           </h4>
           <ul className="flex flex-wrap gap-2">
             {project.tech.map((t, i) => (
               <li
                 key={i}
-                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-indigo-200 text-xs font-medium shadow"
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500/30 text-xs font-medium"
               >
                   {(() => {
                     const TechnologyIcon = technologyIcons[t as keyof typeof technologyIcons];
@@ -196,7 +195,7 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
         </div>
       )}
 
-      <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+      <div className="mt-auto flex flex-col sm:flex-row gap-3 pt-4">
         <a
           href={project.liveDemoUrl ?? "#"}
           {...(project.title === "INSA Intranet Portal" && {
@@ -210,7 +209,7 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
             target: "_blank",
             rel: "noopener noreferrer",
           })}
-          className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow transition-colors duration-200 hover:bg-indigo-700"
+          className="inline-flex items-center justify-center rounded-lg bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white font-medium py-2.5 px-4 transition duration-200"
         >
           Live Demo
         </a>
@@ -218,7 +217,7 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
           href={project.githubUrl ?? "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-full bg-gray-700 px-4 py-3 text-sm font-semibold text-white shadow transition-colors duration-200 hover:bg-gray-900"
+          className="bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-900 dark:text-white font-medium py-2.5 px-4 transition duration-200 rounded-lg flex items-center justify-center gap-2"
         >
           <FaGithub aria-hidden="true" className="h-4 w-4" />
           GitHub Repository
@@ -231,7 +230,7 @@ export const ProjectCard: React.FC<{ project: Project; advanced?: boolean }> = (
 const Projects: React.FC<{ advanced?: boolean }> = ({ advanced }) => (
   <section
     id="projects"
-    className="projects-section py-20 px-4 md:px-8 lg:px-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
+    className="projects-section py-20 px-4 md:px-8 lg:px-16 bg-slate-50 dark:bg-[#0b1120] text-slate-900 dark:text-white"
     aria-labelledby="projects-heading"
   >
     <motion.div
@@ -243,7 +242,7 @@ const Projects: React.FC<{ advanced?: boolean }> = ({ advanced }) => (
     >
       <h2
         id="projects-heading"
-        className="text-4xl md:text-5xl font-bold text-center text-indigo-600 dark:text-indigo-300 mb-14"
+        className="text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-14"
       >
         Projects
       </h2>
@@ -261,6 +260,15 @@ const Projects: React.FC<{ advanced?: boolean }> = ({ advanced }) => (
       </motion.div>
 
       <div className="mt-12 flex justify-center">
+        <a
+          href="https://github.com/kenenisagizaw"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-slate-200 px-5 py-3 text-sm font-semibold text-slate-900 transition-colors duration-200 hover:bg-slate-300 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600"
+        >
+          <FaGithub aria-hidden="true" className="h-5 w-5" />
+          View more on Github
+        </a>
       </div>
     </motion.div>
   </section>
