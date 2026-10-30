@@ -5,17 +5,17 @@ const messages = [
   {
     text: "Hello, I'm Kenenisa Gizaw",
     highlight: ["Kenenisa Gizaw"],
-    color: "from-slate-700 via-indigo-600 to-violet-600",
+    color: "from-slate-500 via-indigo-500 to-violet-500",
   },
   {
     text: "Fullstack Developer",
     highlight: ["Fullstack Developer"],
-    color: "from-blue-600 via-indigo-600 to-purple-600",
+    color: "from-blue-500 via-indigo-500 to-purple-500",
   },
   {
     text: "I build modern, scalable, and accessible web applications!",
     highlight: ["modern", "scalable", "accessible"],
-    color: "from-emerald-600 via-teal-600 to-cyan-600",
+    color: "from-emerald-500 via-teal-500 to-cyan-500",
   },
 ];
 
@@ -69,12 +69,12 @@ const TypingHighlight = ({
   return (
     <div className="relative">
       <motion.div
-        className={`absolute -inset-4 bg-gradient-to-r ${color} opacity-[0.03] blur-xl rounded-lg`}
-        animate={{ scale: [1, 1.02, 1], opacity: [0.02, 0.04, 0.02] }}
+        className={`absolute -inset-4 bg-gradient-to-r ${color} opacity-[0.04] blur-xl rounded-lg`}
+        animate={{ scale: [1, 1.02, 1], opacity: [0.03, 0.06, 0.03] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="min-h-[7rem] md:min-h-[9rem] lg:min-h-[10rem] flex flex-col justify-start pt-2 md:pt-4">
+      <div className="min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem] flex flex-col justify-start pt-2 md:pt-4">
         <h1 className="max-w-none text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-wide leading-tight md:leading-tight">
           {words.map((word, wIdx) => {
             const wordElement = (
@@ -132,7 +132,7 @@ const TypingHighlight = ({
         </h1>
       </div>
 
-      <div className="flex justify-center lg:justify-start gap-1.5 mt-4">
+      <div className="flex justify-center lg:justify-start gap-1.5 mt-3">
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
@@ -167,7 +167,7 @@ export default function HeroText() {
 
   return (
     <div className="relative w-full max-w-5xl text-center lg:text-left">
-      <div className="min-h-[15rem] md:min-h-[16rem] lg:min-h-[18rem] flex flex-col justify-start">
+      <div className="min-h-[12rem] md:min-h-[13rem] lg:min-h-[14rem] flex flex-col justify-start">
         <motion.div
           className="absolute top-4 right-4 md:top-10 md:-right-10 w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-r from-indigo-300/10 to-purple-300/10 blur-2xl pointer-events-none"
           animate={{ x: [0, 8, 0], y: [0, -8, 0], rotate: [0, 5, 0] }}
@@ -188,17 +188,6 @@ export default function HeroText() {
         />
       </div>
 
-      <div className="flex justify-center lg:justify-start gap-2 mt-2">
-        {messages.map((_, i) => (
-          <motion.div
-            key={i}
-            className={`w-6 h-0.5 rounded-full ${i === messageIndex ? "bg-gradient-to-r from-blue-600 to-indigo-600" : "bg-gray-200 dark:bg-gray-700"}`}
-            initial={{ width: i === messageIndex ? "24px" : "8px" }}
-            animate={{ width: i === messageIndex ? "24px" : "8px" }}
-            transition={{ duration: 0.3 }}
-          />
-        ))}
-      </div>
     </div>
   );
 }
