@@ -106,7 +106,7 @@ function App() {
 
             <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[230px_minmax(0,1.35fr)] lg:gap-20">
               <motion.div
-                className="mx-auto w-full max-w-[250px] justify-self-start rounded-[2rem] border border-white/60 bg-white/70 p-4 shadow-[0_22px_60px_-28px_rgba(79,70,229,0.35)] backdrop-blur-xl dark:border-gray-800 dark:bg-gray-900/60 md:p-5 lg:ml-[-1.5rem]"
+                className="mx-auto w-full max-w-[250px] justify-self-start rounded-[2rem] border border-white/60 bg-white/70 p-4 shadow-xl backdrop-blur-xl dark:border-gray-800 dark:bg-gray-900/60 md:p-5 lg:ml-[-1.5rem]"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.6 }}
@@ -114,8 +114,8 @@ function App() {
                 transition={{ duration: 0.7, ease: "easeOut" }}
               >
                 <div className="mx-auto flex max-w-md flex-col items-center text-center">
-                  <div className="mb-6 inline-flex rounded-full border border-indigo-200 bg-indigo-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-indigo-700 dark:border-indigo-900 dark:bg-indigo-950/60 dark:text-indigo-300">
-                    Available for Job
+                  <div className="mb-6 inline-flex whitespace-nowrap rounded-full border border-indigo-200 bg-indigo-50 px-5 py-2 text-xs font-semibold tracking-wide text-indigo-700 dark:border-indigo-900 dark:bg-indigo-950/60 dark:text-indigo-300">
+                    Open to Work
                   </div>
 
                   <div className="w-full overflow-hidden rounded-[2rem] border border-gray-200 bg-gradient-to-br from-gray-100 to-indigo-100 p-2 shadow-inner dark:border-gray-700 dark:from-gray-900 dark:to-gray-800">
@@ -125,9 +125,9 @@ function App() {
                         alt="Kenenisa Gizaw avatar"
                         className="h-full w-full object-cover object-top"
                       />
-                      <div className="absolute inset-x-0 bottom-2 translate-y-2 bg-gradient-to-t from-gray-950/55 to-transparent p-5 text-left">
-                        <p className="text-sm font-medium text-white/80">Kenenisa Gizaw</p>
-                        <p className="text-lg font-semibold text-white">Full-Stack Developer</p>
+                      <div className="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-5 text-left">
+                        <p className="mb-1 text-2xl font-bold text-white">Kenenisa Gizaw</p>
+                        <p className="text-sm font-medium text-gray-300">Full-Stack Developer</p>
                       </div>
                     </div>
                   </div>
@@ -150,7 +150,18 @@ function App() {
                 <HeroText />
 
                 <motion.div
-                  className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start"
+                  className="mt-3 max-w-xl text-center text-base leading-relaxed text-gray-600 dark:text-gray-300 lg:text-left"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.4 }}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
+                >
+                  I build reliable, user-focused digital experiences with modern frontend and backend technologies.
+                </motion.div>
+
+                <motion.div
+                  className="mt-5 flex flex-wrap justify-center gap-3 lg:justify-start"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.4 }}
@@ -159,23 +170,23 @@ function App() {
                 >
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-indigo-700"
+                    className="inline-flex h-12 items-center gap-2 rounded-full bg-indigo-600 px-6 text-sm font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-indigo-700"
                   >
-                    <Briefcase className="w-4 h-4" />
+                    <Briefcase className="h-4 w-4" />
                     Hire Me
                   </a>
                   <a
                     href="#projects"
-                    className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm transition-transform duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-700 dark:border-gray-700 dark:bg-gray-900/60 dark:text-white"
+                    className="inline-flex h-12 items-center gap-2 rounded-full bg-gray-800 px-6 text-sm font-semibold text-white shadow-md transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600"
                   >
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="h-4 w-4" />
                     View Projects
                   </a>
                   <a
                     href="/Kenenisa_Gizaw_CV.pdf"
-                    className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-black"
+                    className="inline-flex h-12 items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 text-sm font-semibold text-gray-900 shadow-sm transition-transform duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-700 dark:border-gray-700 dark:bg-gray-900/60 dark:text-white"
                   >
-                    <FileText className="w-5 h-5" />
+                    <FileText className="h-4 w-4" />
                     Download Resume
                   </a>
                 </motion.div>
@@ -198,7 +209,7 @@ function App() {
                     Express
                   </span>
                   <span className="rounded-full border border-gray-200 bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300">
-                    Next JS
+                    Next.js
                   </span>
                   <span className="rounded-full border border-gray-200 bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-300">
                     PostgreSQL
